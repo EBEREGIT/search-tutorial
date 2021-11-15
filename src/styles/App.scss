@@ -1,0 +1,157 @@
+// variables
+$site_gray: #bdbfc7;
+$font_gray: #898a8f;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: $site_gray;
+
+  // overall container
+  #container {
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    padding: 0;
+    border-radius: 10px;
+  }
+
+  // students list container
+  main {
+    height: 550px;
+    overflow: scroll;
+  }
+
+  // container for each student
+  #student {
+    width: 100%;
+    border-bottom: 1px solid $site_gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    // list of test scores
+    table {
+      margin-left: 12px;
+      margin-top: 15px;
+      color: $font_gray;
+
+      td {
+        padding-right: 20px;
+      }
+    }
+
+    aside {
+      // image container
+      &:first-child {
+        padding: 20px;
+        img {
+          border: 1px solid $site_gray;
+          border-radius: 50%;
+          width: 130px;
+          height: 130px;
+        }
+      }
+
+      // other details container
+      &:last-child {
+        width: 100%;
+
+        #name_and_button {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+
+          button {
+            margin-right: 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: $site_gray;
+            font-size: 1.5rem;
+
+            &:hover{
+              color: black;
+            }
+          }
+        }
+      }
+
+      // student name
+      h1 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin: 10px 0;
+      }
+
+      p {
+        margin: 0;
+        color: $font_gray;
+        margin-left: 15px;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // search input container
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+    padding-top: 10px;
+    z-index: 1;
+    margin: 0 10px 0 5px;
+
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $site_gray;
+      padding: 10px 5px;
+      font-size: 1.1rem;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid black;
+      }
+
+      &::placeholder {
+        color: $site_gray;
+      }
+    }
+  }
+
+  // form for handling tags
+  #tag_form {
+    margin: 15px;
+
+    button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      color: $font_gray;
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid $site_gray;
+      padding: 10px 5px;
+      font-size: 1rem;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid black;
+      }
+
+      &::placeholder {
+        color: $site_gray;
+      }
+    }
+  }
+}
