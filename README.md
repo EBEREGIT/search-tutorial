@@ -1,4 +1,4 @@
-# HatchWays Frontend Assessment
+# HatchWays Frontend Assessment - Student Profiles
 
 This project is built to be assesssed by Hatchways for recruitment purposes.
 
