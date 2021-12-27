@@ -1,11 +1,12 @@
-# HatchWays Frontend Assessment - Student Profiles
+# Search Tutorial
 
-This project is built to be assesssed by Hatchways for recruitment purposes.
+This project is built to teach the right way to make a frontend search
 
 ## Dependencies
 * [React](https://reactjs.org/)
 * [node-sass](https://www.npmjs.com/package/node-sass)
 * [React Icons](https://react-icons.github.io/react-icons/)
+* [coronatracker](https://api.coronatracker.com/)
 
 ## Installation
 * Clone the whole project and/or unzip the file. Run the following in the root folder:
