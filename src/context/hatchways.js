@@ -15,12 +15,12 @@ export default function HatchContextProvider(props) {
     setLoading("processing");
 
     const method = "get",
-      url = "https://api.hatchways.io/assessment/students";
+      url = "https://api.coronatracker.com/v3/stats/worldometer/country";
 
     // get Hatchs
     axios({ url, method })
       .then((result) => {
-        setHatches(result.data.students);
+        setHatches(result.data);
         setLoading("found");
       })
       .catch((error) => {
