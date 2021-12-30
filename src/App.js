@@ -40,6 +40,8 @@ function App() {
             ? filterByNameResults.map((country) => (
                 <Country country={country} />
               ))
+            : filterByName && !filterByNameResults.length
+            ? "No Result Found!"
             : hatchLoading === "processing"
             ? "Fetching Data..."
             : hatchLoading === "found" && hatches && hatches.length
