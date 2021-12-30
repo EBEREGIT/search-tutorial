@@ -1,7 +1,10 @@
 import { useContext, useState } from "react";
 import Country from "./components/Country";
 import { HatchContext } from "./context/hatchways";
-import { filterCountryByName } from "./Helpers/HatchHelper";
+import {
+  filterCountryByName,
+  searchCountryByName,
+} from "./Helpers/HatchHelper";
 import "./styles/App.scss";
 
 function App() {
@@ -11,6 +14,9 @@ function App() {
   // state
   const [filterByName, setFilterByName] = useState("");
   const [filterByNameResults, setFilterByNameResults] = useState([]);
+
+  const [searchString, setSearchString] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
 
   return (
     <>
@@ -32,6 +38,17 @@ function App() {
               )
             }
           />
+
+          {/* search by name the right way*/}
+          <input
+            name="searchString"
+            value={searchString}
+            placeholder="Search by name (Right Way)"
+            onChange={(e) => setSearchString(e.target.value)}
+            onKeyUp={(e) =>
+              searchCountryByName(e.target.value, hatches, setSearchResult)
+            }
+          />
         </header>
 
         {/* return the data collected if there are. Else return "No country found" */}
@@ -41,6 +58,10 @@ function App() {
                 <Country country={country} />
               ))
             : filterByName && !filterByNameResults.length
+            ? "No Result Found!"
+            : searchResult && searchResult.length
+            ? searchResult.map((country) => <Country country={country} />)
+            : searchString && !searchResult.length
             ? "No Result Found!"
             : hatchLoading === "processing"
             ? "Fetching Data..."
