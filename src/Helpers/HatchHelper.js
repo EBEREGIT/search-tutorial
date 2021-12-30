@@ -1,5 +1,11 @@
 // search countries by name
-const filterCountryByName = (name, countries, setResults) => {
+const filterCountryByName = (
+  name,
+  countries,
+  setResults,
+  setSearchString,
+  setSearchResult
+) => {
   // clear search result if the search field is empty
   if (name === "") {
     setResults([]);
@@ -7,6 +13,10 @@ const filterCountryByName = (name, countries, setResults) => {
 
   // discontinue if there is no search yet
   if (name === null || name === "" || countries === []) return;
+
+  // clear the other search field and results if any
+  setSearchString("");
+  setSearchResult([]);
 
   // empty the previous search array if any
   const searchResult = [];
@@ -33,7 +43,9 @@ const filterCountryByName = (name, countries, setResults) => {
 const searchCountryByName = (
   searchString,
   countries,
-  setSearchResult
+  setSearchResult,
+  setFilterByName,
+  setFilterByNameResults
 ) => {
   // clear search result if the search field is empty
   if (searchString === "") {
@@ -42,6 +54,10 @@ const searchCountryByName = (
 
   // discontinue if there is no search yet
   if (searchString === null || searchString === "" || countries === []) return;
+
+  // // clear the other search field and results if any
+  setFilterByName("");
+  setFilterByNameResults([]);
 
   // empty the previous search array if any
   setSearchResult([]);
@@ -60,7 +76,7 @@ const searchCountryByName = (
     }
   }
 
-  setSearchResult(results)
+  setSearchResult(results);
 };
 
 export { filterCountryByName, searchCountryByName };

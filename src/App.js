@@ -34,7 +34,9 @@ function App() {
               filterCountryByName(
                 e.target.value,
                 hatches,
-                setFilterByNameResults
+                setFilterByNameResults,
+                setSearchString,
+                setSearchResult
               )
             }
           />
@@ -46,7 +48,13 @@ function App() {
             placeholder="Search by name (Right Way)"
             onChange={(e) => setSearchString(e.target.value)}
             onKeyUp={(e) =>
-              searchCountryByName(e.target.value, hatches, setSearchResult)
+              searchCountryByName(
+                e.target.value,
+                hatches,
+                setSearchResult,
+                setFilterByName,
+                setFilterByNameResults
+              )
             }
           />
         </header>
