@@ -1,6 +1,6 @@
 # Search Tutorial
 
-This project is built to teach the right way to make a frontend search
+This project is built to teach the right way to make a frontend search. See tutorial [here](https://www.freecodecamp.org/news/how-to-add-search-to-frontend-app/)
 
 ## Dependencies
 * [React](https://reactjs.org/)
